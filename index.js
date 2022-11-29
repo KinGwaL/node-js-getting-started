@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 5000
 const xPubrioKey = process.env.xPubrioKey;
-//const ogs = require('open-graph-scraper');
+const ogs = require('open-graph-scraper');
 // const getHTML = require('html-get')
 // const browserless = require('browserless')()
 
