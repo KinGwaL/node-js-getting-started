@@ -22,9 +22,11 @@
     "metascraper-description": "^5.32.1",
     "metascraper-image": "^5.32.1",
     "metascraper-logo": "^5.32.1",
+    "metascraper-logo-favicon": "^5.32.2",
     "metascraper-publisher": "^5.32.1",
     "metascraper-title": "^5.32.1",
-    "metascraper-url": "^5.32.1"
+    "metascraper-url": "^5.32.1",
+    "puppeteer": "^19.3.0"
   },
   "devDependencies": {
     "got": "^11.3.0",
