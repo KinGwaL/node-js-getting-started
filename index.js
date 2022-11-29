@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 5000
-const xPubrioKey = process.env.X_DOTCEPT_KEY;
+const xPubrioKey = process.env.xPubrioKey;
 //const ogs = require('open-graph-scraper');
 // const getHTML = require('html-get')
 // const browserless = require('browserless')()
@@ -27,21 +27,15 @@ const xPubrioKey = process.env.X_DOTCEPT_KEY;
 //   require('metascraper-url')()
 // ])
 
-app.use(function(req, res, next) {
-
-  if (req.header('X-Pubrio-Key') === xPubrioKey) {
-    next();
-  } else {
+app.get('/', (req, res) => {
+  if (req.header('X-Pubrio-Key') !== xPubrioKey) {
     res.status(403).send({
       status: 403,
       code: '403', 
       message: '403 Forbidden'
     });
   }
-  
-});
 
-app.get('/', (req, res) => {
   var query = req.params.url;
   const options = { url: query };
   // ogs(options)
@@ -58,7 +52,7 @@ app.get('/', (req, res) => {
   // .then(browserless.close)
   // .then(process.exit)
   // res.send(data);
-  res.send("Hi!");
+  res.send(query);
 })
 
 app.listen(PORT);
