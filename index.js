@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 5000
 const xPubrioKey = process.env.xPubrioKey;
-const ogs = require('open-graph-scraper');
 // const getHTML = require('html-get')
 // const browserless = require('browserless')()
 
@@ -39,6 +38,7 @@ app.get('/', async (req, res) => {
   var query = req.params.url;
   const options = { url: query };
   try {
+    const ogs = require('open-graph-scraper');
     ogs(options)
     .then((data) => {
       console.log(data);
