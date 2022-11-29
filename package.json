@@ -11,8 +11,11 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "browserless": "^9.7.1-beta.0",
     "ejs": "^3.1.5",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "html-get": "^2.9.26",
+    "metascraper": "^5.32.2"
   },
   "devDependencies": {
     "got": "^11.3.0",
