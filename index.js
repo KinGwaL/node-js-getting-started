@@ -35,7 +35,7 @@ app.get('/', async (req, res) => {
     });
   }
 
-  var query = req.url;
+  var query = req.query.url;
   console.log(query);
   const options = { url: query };
   try {
