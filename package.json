@@ -26,6 +26,7 @@
     "metascraper-publisher": "^5.32.1",
     "metascraper-title": "^5.32.1",
     "metascraper-url": "^5.32.1",
+    "open-graph-scraper": "^5.0.1",
     "puppeteer": "^19.3.0"
   },
   "devDependencies": {
