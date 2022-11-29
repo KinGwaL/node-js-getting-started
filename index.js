@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 5000
+const xPubrioKey = process.env.X_DOTCEPT_KEY;
 //const ogs = require('open-graph-scraper');
 // const getHTML = require('html-get')
 // const browserless = require('browserless')()
