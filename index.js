@@ -3,20 +3,9 @@ const app = express()
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000
 const xPubrioKey = process.env.xPubrioKey;
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-const getHTML = require('html-get')
-const browserless = require('browserless')()
 
-const getContent = async url => {
-  // create a browser context inside the main Chromium process
-  const browserContext = browserless.createContext()
-  const promise = getHTML(url, { getBrowserless: () => browserContext })
-  // close browser resources before return the result
-  promise.then(() => browserContext).then(browser => browser.destroyContext())
-  return promise
-}
 
 
 
@@ -74,6 +63,19 @@ app.get('/api', async (req, res) => {
   console.log(req);
   const options = { url: query };
   try {
+
+    const getHTML = require('html-get')
+    const browserless = require('browserless')()
+
+    const getContent = async url => {
+      // create a browser context inside the main Chromium process
+      const browserContext = browserless.createContext()
+      const promise = getHTML(url, { getBrowserless: () => browserContext })
+      // close browser resources before return the result
+      promise.then(() => browserContext).then(browser => browser.destroyContext())
+      return promise
+    }
+
     const metascraper = require('metascraper')([
       require('metascraper-author')(),
       require('metascraper-date')(),
