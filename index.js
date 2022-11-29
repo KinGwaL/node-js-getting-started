@@ -16,8 +16,6 @@ app.get('/', async (req, res) => {
   }
 
   var query = req.query.url;
-  console.log(query);
-  console.log(req);
   const options = { url: query };
   try {
     const ogs = require('open-graph-scraper');
@@ -28,7 +26,7 @@ app.get('/', async (req, res) => {
       // console.log('error:', error);  // This returns true or false. True if there was an error. The error itself is inside the results object.
       // console.log('result:', result); // This contains all of the Open Graph results
       // console.log('response:', response); // This contains the HTML of page
-      res.send("HIHI");
+      res.send(result);
     }).catch(err => {
       console.log(err);
       res.sendStatus(501);
