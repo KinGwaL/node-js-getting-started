@@ -15,7 +15,16 @@
     "ejs": "^3.1.5",
     "express": "^4.15.2",
     "html-get": "^2.9.26",
-    "metascraper": "^5.32.2"
+    "metascraper": "^5.32.2",
+    "metascraper-author": "^5.32.1",
+    "metascraper-clearbit": "^5.32.1",
+    "metascraper-date": "^5.32.1",
+    "metascraper-description": "^5.32.1",
+    "metascraper-image": "^5.32.1",
+    "metascraper-logo": "^5.32.1",
+    "metascraper-publisher": "^5.32.1",
+    "metascraper-title": "^5.32.1",
+    "metascraper-url": "^5.32.1"
   },
   "devDependencies": {
     "got": "^11.3.0",
@@ -23,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/KinGwaL/node-js-getting-started"
   },
   "keywords": [
     "node",
