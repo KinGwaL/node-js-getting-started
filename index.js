@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 5000
-const ogs = require('open-graph-scraper');
+//const ogs = require('open-graph-scraper');
 // const getHTML = require('html-get')
 // const browserless = require('browserless')()
 
@@ -43,18 +43,21 @@ app.use(function(req, res, next) {
 app.get('/', (req, res) => {
   var query = req.params.url;
   const options = { url: query };
-  ogs(options)
-    .then((data) => {
-      const { error, result, response } = data;
-      console.log('error:', error);  // This returns true or false. True if there was an error. The error itself is inside the results object.
-      console.log('result:', result); // This contains all of the Open Graph results
-      console.log('response:', response); // This contains the HTML of page
-      res.send(result);
-    })
+  // ogs(options)
+  //   .then((data) => {
+  //     const { error, result, response } = data;
+  //     console.log('error:', error);  // This returns true or false. True if there was an error. The error itself is inside the results object.
+  //     console.log('result:', result); // This contains all of the Open Graph results
+  //     console.log('response:', response); // This contains the HTML of page
+  //     res.send(result);
+  //   })
   // const data = getContent(query)
   // .then(metascraper)
   // .then(metadata => console.log(metadata))
   // .then(browserless.close)
   // .then(process.exit)
   // res.send(data);
+  res.send("Hi!");
 })
+
+app.listen(PORT);
