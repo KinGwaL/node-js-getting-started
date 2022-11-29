@@ -35,9 +35,9 @@ app.get('/', async (req, res) => {
     });
   }
 
-  var query = req.params.url;
+  var query = req.url;
   console.log(query);
-  const options = { url: query, onlyGetOpenGraphInfo:true };
+  const options = { url: query };
   try {
     const ogs = require('open-graph-scraper');
     ogs(options)
