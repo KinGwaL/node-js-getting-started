@@ -22,7 +22,7 @@ app.get('/', async (req, res) => {
     const data = await ogs(options);
     res.send(data.result);
   }catch (e) {
-    res.sendStatus(e);
+    res.sendStatus(501);
   }
   // try {
 
