@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
 
   try {
     var query = req.query.url;
-    const options = { url: query, downloadLimit:9000000 };
+    const options = { url: query, downloadLimit:3000000 };
     const ogs = require('open-graph-scraper');
     const data = await ogs(options);
     res.send(data.result);
