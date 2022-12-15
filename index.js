@@ -7,16 +7,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', async (req, res) => {
-  if (req.header('X-Pubrio-Key') != xPubrioKey) {
+  var query = req.query.url;
+
+  if (!query || req.header('X-Pubrio-Key') != xPubrioKey) {
     res.status(403).send({
       status: 403,
       code: '403', 
       message: '403 Forbidden'
     });
+    return;
   }
 
   try {
-    var query = req.query.url;
     const options = { url: query, downloadLimit:5000000 };
     const ogs = require('open-graph-scraper');
     const data = await ogs(options);
