@@ -13,6 +13,7 @@
   "dependencies": {
     "body-parser": "^1.20.1",
     "browserless": "^9.7.1-beta.0",
+    "cluster": "^0.7.7",
     "ejs": "^3.1.5",
     "express": "^4.15.2",
     "html-get": "^2.9.26",
@@ -28,6 +29,7 @@
     "metascraper-title": "^5.32.1",
     "metascraper-url": "^5.32.1",
     "open-graph-scraper": "^5.0.1",
+    "os": "^0.1.2",
     "puppeteer": "^19.3.0"
   },
   "devDependencies": {
